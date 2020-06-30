@@ -1,0 +1,17 @@
+{
+  "name": "git-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gaurav pant",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "lite-server": "^2.5.4",
+    "popper.js": "^1.12.9"
+  }
+}
