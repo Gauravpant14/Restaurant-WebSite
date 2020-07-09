@@ -33,12 +33,80 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
                                 class="fa fa-address-card fa-lg"></span>Contact</a></li>
                 </ul>
+                <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal">
+                    <span class="fa fa-sign-in"></span> Login</a>
+                </span>
             </div>
         </div>
 
 
 
     </nav>
+
+    <!--The parent <div> of the modal must have an ID that is 
+        the same as the value of the data-target attribute used to trigger the modal ("loginModal").
+        The .modal class identifies the content of <div> as a modal and brings focus to it.
+        The .fade class adds a transition effect which fades the modal in and out.
+        The attribute role="dialog" improves accessibility for people using screen readers.
+    -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <!--The .modal-dialog class sets the proper width and margin of the modal.-->
+        <div class="modal-dialog modal-lg" role="content">
+            <!--The <div> with class="modal-content" styles the modal (border, background-color, etc.).
+                 Inside this <div>, add the modal's header, body, and footer.--> <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span> Login</a>
+                    </span>
+            <!-- Modal content-->
+
+            <div class="modal-content">
+
+                <!--In modal content, we have a modal header, inside header we have a modal title, And a button 
+                The .modal-header class is used to define the style for the header of the modal,
+            The <button> inside the header, has a data-dismiss="modal" attribute which closes the modal if you click on it,
+                The .close class styles the close button, and the .modal-title class styles the header with a proper line-height.-->
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Login </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!--The .modal-body class is used to define the style for the body of the modal.
+                     Add any HTML markup here; paragraphs, images, videos, etc.-->
+
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3"
+                                    placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1"
+                                    id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto"
+                                data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
@@ -47,16 +115,25 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our
                         lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm-3 ">
-                    
-                        <img src="img/logo.png" class="img-fluid pull-left">
+                <div class="col-12 col-sm align-self-center">
+
+                    <img src="img/logo.png" class="img-fluid">
                 </div>
-                <div class="col-12 col-sm-3 align-self-center">
-                    <div class="d-flex"><a class="navlink" href="#form"><button type="button" class="btn btn-sm btn-block btn-warning"><strong>Reserve Table</strong></button></a></div>
-                        
-                </div>
-                        
-                </div>
+                <div class="col-12 col-sm align-self-center">
+
+                    <!-- here we add a anchor tag that role will alike a button, and class should be btn, and it is a block btn, 
+                     work as a navlink and color should be warning, 
+                     and then we use a data-toggle that will give a tooltip to us, 
+                     and tooltip can contain html tags so we will do data-html=true,
+                     and the tittle of the tooltip will be "or call us at and Line break and number in strong tag",
+                     and Use the data-placement attribute to set the position of the tooltip on 
+                     top, bottom, left or the right side of the element, -->
+
+                    <a role="button" class="btn btn-block navlink btn-warning" data-toggle="tooltip" data-html="true"
+                        title="Or call us at <br><strong>+987654321</strong>" data-placement="bottom"
+                        href="#form">Reserve Table </a>
+
+
                 </div>
 
             </div>
@@ -185,7 +262,7 @@
                                 <div class="col-12 offset-2">
                                     <button type="button" class="btn btn-primary btn">Reserve</button>
                                 </div>
-                                
+
                             </div>
 
 
@@ -251,6 +328,18 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+
+        /*Activating tooltip : The tooltip needs to be activated by adding 
+        a small Javascript code(jquery) to the bottom of the page as follows
+        where inside document.ready function we select the data-toggle="tooltip" and add a tooltip using .tooltip() 
+        */
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+    </script>
 </body>
 
 </html>
