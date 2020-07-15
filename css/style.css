@@ -73,3 +73,13 @@ height: 300px;
 z-index : An element with greater stack order is always in front of an element with a lower stack order.
 Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky).
 */
+
+/*This code is generated using scss*/
+.modal .modal-header {
+  background-color: #512DA8;
+  color: #FFFAF0; }
+  .modal .modal-header #closeLogin {
+    background-color: #FFFAF0; }
+
+.modal .modal-body {
+  background-color: #D1C4E9; }

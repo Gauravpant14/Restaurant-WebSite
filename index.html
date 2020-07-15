@@ -33,8 +33,8 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span
                                 class="fa fa-address-card fa-lg"></span>Contact</a></li>
                 </ul>
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                <span class="navbar-text" id="login">
+                    <a data-toggle="modal" > <!-- removing data-target="#loginModal" so that we can trigger it by js code -->
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -55,7 +55,7 @@
         <!--The .modal-dialog class sets the proper width and margin of the modal.-->
         <div class="modal-dialog modal-lg" role="content">
             <span class="navbar-text">
-                <a data-toggle="modal" data-target="#loginModal">
+                <a data-toggle="modal" data-target="#loginModal"> <!---->
                     <span class="fa fa-sign-in"></span> Login</a>
             </span>
             <!-- Modal content-->
@@ -69,7 +69,7 @@
 
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="closeLogin" data-dismiss="modal">&times;</button>
                 </div>
 
                 <!--The .modal-body class is used to define the style for the body of the modal.
@@ -234,8 +234,9 @@
                         href="#registration">Reserve Table </a>
                     -->
 
-                    <a role="button" class="btn btn-block navlink btn-warning" data-toggle="modal"
-                        data-target="#registration1">Reserve Table </a>
+                    <a role="button" class="btn btn-block navlink btn-warning" id="regBtn" >Reserve Table </a> 
+                    <!-- removing data-toggle="modal"
+                        data-target="#registration1"-->
 
                 </div>
 
@@ -617,6 +618,14 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+
+            $("#regBtn").click(function(){
+                $("#registration1").modal("show");
+            })
+
+            $("#login").click(function(){
+                $("#loginModal").modal("show");
+            })
 
 
         });

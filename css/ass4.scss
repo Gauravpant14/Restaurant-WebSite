@@ -1,0 +1,18 @@
+$background-dark : #512DA8;
+$background-pale: #D1C4E9;
+
+.modal {
+    .modal-header{
+        background-color: $background-dark;
+        color:  #FFFAF0;
+        #closeLogin{
+           background-color:#FFFAF0 ; 
+        }
+
+    } 
+    .modal-body{
+        background-color: $background-pale;
+
+    }
+}
+
