@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -o css/ css/"
   },
   "author": "gaurav pant",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "lite-server": "^2.5.4",
+    "node-sass": "^4.14.1",
     "popper.js": "^1.12.9"
   }
 }
